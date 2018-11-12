@@ -1,0 +1,24 @@
+{
+  "title": "Configuration component",
+  "description": "elastic.io component to separate the modification of some configurable values from the modification of the flow",
+  "credentials": {
+    "fields": {
+      "configData": {
+        "label": "Configuration data object",
+        "required": true,
+        "viewClass": "JSONataView",
+        "note": "Please specify configuration data here. JSON must be valid in order for credentials to be verified."
+      }
+    }
+  },
+  "actions": {
+    "emitConfig": {
+      "main": "./lib/actions/emitConfig.js",
+      "title": "Emit configuration data in order to make it accessible",
+      "metadata": {
+        "in": "./lib/schemas/createPet.in.json",
+        "out": "./lib/schemas/createPet.out.json"
+      }
+    }
+  }
+}
