@@ -1,0 +1,23 @@
+{
+  "name": "config-component",
+  "version": "0.0.1",
+  "description": "elastic.io component for configuration data",
+  "author": {
+    "name": "Elastic.io GmbH",
+    "email": "ps@elastic.io",
+    "url": "https://elastic.io"
+  },
+  "repository": {
+    "private": true,
+    "type": "git",
+    "url": "git@github.com:elasticio/configuration-component.git"
+  },
+  "engines": {
+    "node": "8.6.0",
+    "npm": "6.0.0"
+  },
+  "dependencies": {
+    "elasticio-node": "0.0.9",
+    "elasticio-sailor-nodejs": "2.2.1"
+  }
+}
