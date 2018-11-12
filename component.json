@@ -6,18 +6,16 @@
       "configData": {
         "label": "Configuration data object",
         "required": true,
-        "viewClass": "JSONataView",
-        "note": "Please specify configuration data here. JSON must be valid in order for credentials to be verified."
+        "viewClass": "JSONataView"
       }
     }
   },
   "actions": {
     "emitConfig": {
       "main": "./lib/actions/emitConfig.js",
-      "title": "Emit configuration data in order to make it accessible",
+      "title": "Emit data",
       "metadata": {
-        "in": "./lib/schemas/createPet.in.json",
-        "out": "./lib/schemas/createPet.out.json"
+        "out": "./lib/schemas/emitConfig.out.json"
       }
     }
   }
