@@ -1,5 +1,4 @@
-# <Component name>
-configuration-component
+# configuration-component
  
 ## Description
 elastic.io configuration component which allows to separate the modification of configurable values from the modification of the flow.
