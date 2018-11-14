@@ -14,6 +14,7 @@
     "emitConfig": {
       "main": "./lib/actions/emitConfig.js",
       "title": "Emit data",
+      "description": "Emits configuration data (must be a valid JSON object) as a message",
       "metadata": {
         "out": "./lib/schemas/emitConfig.out.json"
       }
