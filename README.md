@@ -10,8 +10,29 @@ It emits a message with an object equivalent to the JSON in the config. So any d
 ## Credentials
 Configuration data should be specified as credentials of a JSON format.
 JSON must be valid in order for credentials to be verified (except arrays, see *Known limitations* below). Credentials verification will fail otherwise.
-Input data example:
-![Data sample](https://user-images.githubusercontent.com/8449044/48360400-d3138980-e6a7-11e8-8b79-87932eec66c1.png)
+
+Input data example. Consider the following example:
+
+* Someone wants to synchronize prices between an ERP and an E-SHOP
+* The price logic is so complex that it can not pragmatically exist in a single flow.
+* Prices in the ERP exist in only in currency A.  Prices in the E-SHOP are in currency B.  The customer wants to convert prices as data is moved between systems at a fixed rate that they set.
+* This fixed rate must be the same between all flows.
+
+If the config component existed, you build flows of the following form:
+ERP.GetPriceInfo() -> Config.LoadConfig() -> E-SHOP.SetPrice(price := ERPResults.Price * ConfigResults.ExchangeRate)
+If one needed to change the exchange rate, that value could be edited by modifying the config credentials to include the new rate and then resetting the snapshot for all the price import flows. 
+Currency rates sample:
+```json
+{
+        "USDEUR": 0.881715,
+        "USDFJD": 2.115102,
+        "USDPLN": 3.787097,
+        "USDQAR": 3.641042,
+        "USDUAH": 30.718014,
+        "USDZWL": 322.355011
+}
+```
+Then the currency rate can be used in any number of flows, where it is needed and then changed form the single place. That changes will affect all the flows where it is used. 
 ## Actions
 ### Emit data
 The only action. Emits configuration data (must be a valid JSON object) as a message.
