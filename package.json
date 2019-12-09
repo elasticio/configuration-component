@@ -16,15 +16,15 @@
     "node": "8.6.0",
     "npm": "6.0.0"
   },
+  "scripts": {
+    "test": "mocha spec --recursive --timeout 50000"
+  },
   "dependencies": {
     "elasticio-node": "0.0.9",
     "elasticio-sailor-nodejs": "2.2.1",
-    "mocha": "5.0.5",
-    "nock": "9.2.5",
-    "querystring": "0.2.0",
-    "sinon": "5.1.0"
+    "mocha": "5.0.5"
   },
-  "scripts": {
-    "test": "mocha spec --recursive --timeout 50000"
+  "devDependencies": {
+    "sinon": "5.1.0"
   }
 }
