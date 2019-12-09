@@ -1,6 +1,6 @@
 {
   "name": "config-component",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "elastic.io component for configuration data",
   "author": {
     "name": "Elastic.io GmbH",
