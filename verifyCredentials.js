@@ -16,7 +16,7 @@ module.exports = function verifyCredentials(credentials, cb) {
     return cb(null, {verified: true});
   }
   catch (err) {
-    console.error('Error occurred. Input object must be a valid JSON.');
+    this.logger.error('Error occurred. Input object must be a valid JSON.');
     return cb(null, {verified: false});
   }
 };
