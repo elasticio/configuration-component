@@ -3,6 +3,10 @@
 ## Description
 elastic.io configuration component which allows separating the modification of configurable values from the modification of the flow.
 
+## Environment Variables
+1.`LOG_LEVEL` - `trace` | `debug` | `info` | `warning` | `error` controls logger level
+
+
 ### How works.  API version / SDK version
 Configuration component has a credential which is a text field with some valid JSON.  (JSON must be valid in order for credentials to be verified).
 It emits a message with an object equivalent to the JSON in the config. So any data which is used in the flow and is repeated in multiple places can be configured (or later changed) in the single step. After that new values are used where it is needed.
