@@ -3,7 +3,7 @@
 ## Description
 elastic.io configuration component which allows separating the modification of configurable values from the modification of the flow.
 
-## Environment Variables
+### Environment Variables
 1.`LOG_LEVEL` - `trace` | `debug` | `info` | `warning` | `error` controls logger level
 
 
