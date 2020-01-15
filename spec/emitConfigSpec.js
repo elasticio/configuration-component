@@ -3,6 +3,7 @@
 const fs = require('fs');
 const chai = require('chai');
 const sinon = require('sinon');
+const logger = require('@elastic.io/component-logger')();
 
 const {expect} = chai;
 const {messages} = require('elasticio-node');
@@ -40,7 +41,7 @@ describe('emitConfig', () => {
   it('emitConfig ', async () => {
     const inputConfigDataMessageJson = JSON.parse(inputConfigDataMessage);
     console.log(configuration);
-    await emitConfig.process.call(emitter, inputConfigDataMessageJson, configuration, {});
+    await emitConfig.process.call({ emit: emitter.emit, logger }, inputConfigDataMessageJson, configuration, {});
 
     expect(JSON.stringify(lastCall.lastCall.args[0]))
       .to
