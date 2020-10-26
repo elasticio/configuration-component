@@ -9,6 +9,7 @@ module.exports = async function verify(credentials) {
   const configData = credentials.configData;
   try {
     JSON.parse(configData);
+    this.logger.info('Credentials successfully verified');
     return { verified: true };
   }
   catch (err) {
