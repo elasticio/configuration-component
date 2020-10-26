@@ -27,6 +27,6 @@
     "@elastic.io/component-logger": "0.0.1"
   },
   "scripts": {
-    "integration-test": "mocha spec/integration"
+    "test": "mocha spec --recursive"
   }
 }

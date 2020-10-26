@@ -40,7 +40,6 @@ describe('emitConfig', () => {
 
   it('emitConfig ', async () => {
     const inputConfigDataMessageJson = JSON.parse(inputConfigDataMessage);
-    console.log(configuration);
     await emitConfig.process.call({ emit: emitter.emit, logger }, inputConfigDataMessageJson, configuration, {});
 
     expect(JSON.stringify(lastCall.lastCall.args[0]))
