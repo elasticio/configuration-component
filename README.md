@@ -45,6 +45,11 @@ Very simple schema. Output JSON could be of **any** complexity.
 
 [lib/schemas/emitConfig.out.json](lib/schemas/emitConfig.out.json)
 
+## Contribution
+
+See [CONTRIBUTING.md](https://github.com/elasticio/microsoft-onedrive-component/blob/master/CONTRIBUTING.md) for more information on how you could contribute to development of this component.
+
+
 ## Known limitations
 1. As realtime flows use credentials which were saved at the moment of starting the flow, this component should be used only in ordinary flows. This is not a bug or limitation, but the platform specific case.
 2. Despite naked arrays are valid JSON, there are some platform limitations, which do not allow to access the data in such arrays, that has been emitted from a component, from the next step. This is why naked arrays should not be passed to the component directly.
