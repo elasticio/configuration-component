@@ -1,6 +1,6 @@
 {
   "name": "config-component",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "elastic.io component for configuration data",
   "author": {
     "name": "Elastic.io GmbH",
@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "elasticio-node": "0.0.9",
-    "elasticio-sailor-nodejs": "2.6.18",
+    "elasticio-sailor-nodejs": "2.6.21",
     "querystring": "0.2.0"
   },
   "devDependencies": {
