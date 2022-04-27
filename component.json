@@ -1,6 +1,6 @@
 {
   "title": "Configuration component",
-  "version": "0.0.7",
+  "version": "1.0.0",
   "description": "elastic.io component to separate the modification of some configurable values from the modification of the flow",
   "buildType" : "docker",
   "credentials": {
