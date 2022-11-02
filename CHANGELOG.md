@@ -1,3 +1,7 @@
+## 1.0.1 (November 04, 2022)
+
+* Update Sailor version to 2.7.1
+
 ## 1.0.0 (April 08, 2022)
 
 * Update Sailor version to 2.6.27
