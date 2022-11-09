@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "elasticio-node": "0.0.9",
-    "elasticio-sailor-nodejs": "2.6.27",
+    "elasticio-sailor-nodejs": "2.7.1",
     "querystring": "0.2.0"
   },
   "devDependencies": {
