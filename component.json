@@ -2,12 +2,64 @@
   "title": "Configuration component",
   "version": "1.0.1",
   "description": "elastic.io component to separate the modification of some configurable values from the modification of the flow",
-  "buildType" : "docker",
   "credentials": {
     "fields": {
-      "configData": {
-        "label": "Configuration data object",
+      "textFieldReq": {
+        "label": "Text Field field",
         "required": true,
+        "viewClass": "TextFieldView"
+      },
+      "textField": {
+        "label": "Text Field field",
+        "required": false,
+        "viewClass": "TextFieldView"
+      },
+      "pwdFieldReq": {
+        "label": "Password field",
+        "required": true,
+        "viewClass": "PasswordFieldView"
+      },
+      "pwdField": {
+        "label": "Password field",
+        "required": false,
+        "viewClass": "PasswordFieldView"
+      },
+      "checkboxFieldReq": {
+        "label": "CheckBoxView field",
+        "required": true,
+        "viewClass": "CheckBoxView"
+      },
+      "checkboxField": {
+        "label": "CheckBoxView field",
+        "required": false,
+        "viewClass": "CheckBoxView"
+      },
+      "selectFieldReq": {
+        "label": "SelectView field",
+        "required": true,
+        "viewClass": "SelectView",
+        "model": {
+          "foo": "foo",
+          "bar": "bar"
+        }
+      },
+      "selectField": {
+        "label": "SelectView field",
+        "required": false,
+        "viewClass": "SelectView",
+        "model": {
+          "foo": "foo",
+          "bar": "bar"
+        }
+      },
+      "jsonataFieldReq": {
+        "label": "JSONata field",
+        "required": true,
+        "viewClass": "JSONataView"
+      },
+      "jsonataField": {
+        "label": "JSONata field",
+        "required": false,
         "viewClass": "JSONataView"
       }
     }
@@ -17,6 +69,78 @@
       "main": "./lib/actions/emitConfig.js",
       "title": "Emit data",
       "description": "Emits configuration data (must be a valid JSON object) as a message",
+      "fields": {
+        "textFieldReq": {
+          "label": "Text Field field",
+          "required": true,
+          "viewClass": "TextFieldView"
+        },
+        "textField": {
+          "label": "Text Field field",
+          "required": false,
+          "viewClass": "TextFieldView"
+        },
+        "pwdFieldReq": {
+          "label": "Password field",
+          "required": true,
+          "viewClass": "PasswordFieldView"
+        },
+        "pwdField": {
+          "label": "Password field",
+          "required": false,
+          "viewClass": "PasswordFieldView"
+        },
+        "checkboxFieldReq": {
+          "label": "CheckBoxView field",
+          "required": true,
+          "viewClass": "CheckBoxView"
+        },
+        "checkboxField": {
+          "label": "CheckBoxView field",
+          "required": false,
+          "viewClass": "CheckBoxView"
+        },
+        "selectFieldReq": {
+          "label": "SelectView field",
+          "required": true,
+          "viewClass": "SelectView",
+          "model": {
+            "foo": "foo",
+            "bar": "bar"
+          }
+        },
+        "selectField": {
+          "label": "SelectView field",
+          "required": false,
+          "viewClass": "SelectView",
+          "model": {
+            "foo": "foo",
+            "bar": "bar"
+          }
+        },
+        "jsonataFieldReq": {
+          "label": "JSONata field",
+          "required": true,
+          "viewClass": "JSONataView"
+        },
+        "jsonataField": {
+          "label": "JSONata field",
+          "required": false,
+          "viewClass": "JSONataView"
+        },
+        "codeReq": {
+          "viewClass": "CodeFieldView",
+          "label": "Code",
+          "required": true,
+          "default": "// Please note only Node.js code is supported here\nasync function run(msg, cfg, snapshot) {\n\tthis.logger.info('Incoming message is %s', JSON.stringify(msg));\n\tconst body = { result : 'Hello world!' };\n\t// You can emit as many data messages as required\n\tawait this.emit('data', { body });\n\tthis.logger.info('Execution finished');\n}"
+        },
+        "code": {
+          "viewClass": "CodeFieldView",
+          "label": "Code",
+          "required": false,
+          "default": "// Please note only Node.js code is supported here\nasync function run(msg, cfg, snapshot) {\n\tthis.logger.info('Incoming message is %s', JSON.stringify(msg));\n\tconst body = { result : 'Hello world!' };\n\t// You can emit as many data messages as required\n\tawait this.emit('data', { body });\n\tthis.logger.info('Execution finished');\n}"
+        }
+      },
       "metadata": {
         "out": "./lib/schemas/emitConfig.out.json"
       }
