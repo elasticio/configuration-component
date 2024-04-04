@@ -7,32 +7,50 @@
       "textFieldReq": {
         "label": "Text Field field",
         "required": true,
-        "viewClass": "TextFieldView"
+        "viewClass": "TextFieldView",
+        "help": {
+          "description": "A"
+        }
       },
       "textField": {
         "label": "Text Field field",
         "required": false,
-        "viewClass": "TextFieldView"
+        "viewClass": "TextFieldView",
+        "help": {
+          "description": "A\nAA"
+        }
       },
       "pwdFieldReq": {
         "label": "Password field",
         "required": true,
-        "viewClass": "PasswordFieldView"
+        "viewClass": "PasswordFieldView",
+        "help": {
+          "description": "B\nBB"
+        }
       },
       "pwdField": {
         "label": "Password field",
         "required": false,
-        "viewClass": "PasswordFieldView"
+        "viewClass": "PasswordFieldView",
+        "help": {
+          "description": "A"
+        }
       },
       "checkboxFieldReq": {
         "label": "CheckBoxView field",
         "required": true,
-        "viewClass": "CheckBoxView"
+        "viewClass": "CheckBoxView",
+        "help": {
+          "description": "C\nCC"
+        }
       },
       "checkboxField": {
         "label": "CheckBoxView field",
         "required": false,
-        "viewClass": "CheckBoxView"
+        "viewClass": "CheckBoxView",
+        "help": {
+          "description": "D\nDD"
+        }
       },
       "selectFieldReq": {
         "label": "SelectView field",
@@ -41,6 +59,9 @@
         "model": {
           "foo": "foo",
           "bar": "bar"
+        },
+        "help": {
+          "description": "E\nEE"
         }
       },
       "selectField": {
@@ -50,17 +71,26 @@
         "model": {
           "foo": "foo",
           "bar": "bar"
+        },
+        "help": {
+          "description": "F\nFF"
         }
       },
       "jsonataFieldReq": {
         "label": "JSONata field",
         "required": true,
-        "viewClass": "JSONataView"
+        "viewClass": "JSONataView",
+        "help": {
+          "description": "G\nGG"
+        }
       },
       "jsonataField": {
         "label": "JSONata field",
         "required": false,
-        "viewClass": "JSONataView"
+        "viewClass": "JSONataView",
+        "help": {
+          "description": "H\nHH"
+        }
       }
     }
   },
@@ -73,36 +103,43 @@
         "textFieldReq": {
           "label": "Text Field field",
           "required": true,
+          "order": 99,
           "viewClass": "TextFieldView"
         },
         "textField": {
           "label": "Text Field field",
           "required": false,
+          "order": 98,
           "viewClass": "TextFieldView"
         },
         "pwdFieldReq": {
           "label": "Password field",
           "required": true,
+          "order": 97,
           "viewClass": "PasswordFieldView"
         },
         "pwdField": {
           "label": "Password field",
           "required": false,
+          "order": 96,
           "viewClass": "PasswordFieldView"
         },
         "checkboxFieldReq": {
           "label": "CheckBoxView field",
           "required": true,
+          "order": 95,
           "viewClass": "CheckBoxView"
         },
         "checkboxField": {
           "label": "CheckBoxView field",
           "required": false,
+          "order": 94,
           "viewClass": "CheckBoxView"
         },
         "selectFieldReq": {
           "label": "SelectView field",
           "required": true,
+          "order": 93,
           "viewClass": "SelectView",
           "model": {
             "foo": "foo",
@@ -112,6 +149,7 @@
         "selectField": {
           "label": "SelectView field",
           "required": false,
+          "order": 92,
           "viewClass": "SelectView",
           "model": {
             "foo": "foo",
@@ -121,27 +159,32 @@
         "jsonataFieldReq": {
           "label": "JSONata field",
           "required": true,
+          "order": 91,
           "viewClass": "JSONataView"
         },
         "jsonataField": {
           "label": "JSONata field",
           "required": false,
+          "order": 90,
           "viewClass": "JSONataView"
         },
         "codeReq": {
           "viewClass": "CodeFieldView",
           "label": "Code",
           "required": true,
+          "order": 89,
           "default": "// Please note only Node.js code is supported here\nasync function run(msg, cfg, snapshot) {\n\tthis.logger.info('Incoming message is %s', JSON.stringify(msg));\n\tconst body = { result : 'Hello world!' };\n\t// You can emit as many data messages as required\n\tawait this.emit('data', { body });\n\tthis.logger.info('Execution finished');\n}"
         },
         "code": {
           "viewClass": "CodeFieldView",
           "label": "Code",
           "required": false,
+          "order": 88,
           "default": "// Please note only Node.js code is supported here\nasync function run(msg, cfg, snapshot) {\n\tthis.logger.info('Incoming message is %s', JSON.stringify(msg));\n\tconst body = { result : 'Hello world!' };\n\t// You can emit as many data messages as required\n\tawait this.emit('data', { body });\n\tthis.logger.info('Execution finished');\n}"
         }
       },
       "metadata": {
+        "in": "./lib/schemas/emitConfig.in.json",
         "out": "./lib/schemas/emitConfig.out.json"
       }
     }

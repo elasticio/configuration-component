@@ -1,0 +1,72 @@
+{
+  "type": "object",
+  "properties": {
+    "contents": {
+      "type": "array",
+      "required": true,
+      "items": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "string",
+            "required": false,
+            "help": {
+              "description": "'user' or 'model'"
+            },
+            "enum": [
+              "user",
+              "model"
+            ]
+          },
+          "parts": {
+            "type": "array",
+            "help": {
+              "description": "A list of parts"
+            },
+            "required": true,
+            "items": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "type": "string",
+                  "help": {
+                    "description": "Text string to send to the Gemini API to generate content"
+                  }
+                },
+                "inline_data": {
+                  "type": "object",
+                  "help": {
+                    "description": "The content of the image if there is one"
+                  },
+                  "properties": {
+                    "mime_type": {
+                      "type": "string",
+                      "help": {
+                        "description": "MIME type of the image. E.g. 'image/png', 'image/jpeg'"
+                      },
+                      "required": false,
+                      "enum": [
+                        "image/png",
+                        "image/jpeg",
+                        "image/heic",
+                        "image/heif",
+                        "image/webp"
+                      ]
+                    },
+                    "data": {
+                      "type": "string",
+                      "help": {
+                        "description": "Base64 image"
+                      },
+                      "required": false
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
