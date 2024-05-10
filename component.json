@@ -1,9 +1,39 @@
 {
   "title": "Configuration component",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "elastic.io component to separate the modification of some configurable values from the modification of the flow",
   "credentials": {
     "fields": {
+      "fieldOne": {
+        "label": "Dynamic Select Model 1",
+        "required": true,
+        "viewClass": "SelectView",
+        "help": {
+          "description": "A"
+        },
+        "model": "getFieldOne"
+      },
+      "fieldTwo": {
+        "label": "Dynamic Select Model 2",
+        "required": true,
+        "viewClass": "SelectView",
+        "help": {
+          "description": "A"
+        },
+        "model": "getFieldTwo"
+      },
+      "fieldThree": {
+        "label": "Dynamic Select Model 3",
+        "required": true,
+        "viewClass": "SelectView",
+        "help": {
+          "description": "A"
+        },
+        "require": [
+          "fieldTwo"
+        ],
+        "model": "getFieldThree"
+      },
       "textFieldReq": {
         "label": "Text Field field",
         "required": true,
