@@ -1,6 +1,6 @@
 {
   "title": "Configuration component",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "elastic.io component to separate the modification of some configurable values from the modification of the flow",
   "credentials": {
     "fields": {
@@ -100,11 +100,117 @@
       "title": "Emit data",
       "description": "Emits configuration data (must be a valid JSON object) as a message",
       "fields": {
-        "requestLine": {
-          "label": "Request line",
+        "fieldOne": {
+          "label": "Dynamic Select Model 1",
+          "required": true,
+          "viewClass": "SelectView",
+          "help": {
+            "description": "A"
+          },
+          "model": "getFieldOne"
+        },
+        "fieldTwo": {
+          "label": "Dynamic Select Model 2",
+          "required": true,
+          "viewClass": "SelectView",
+          "help": {
+            "description": "A"
+          },
+          "model": "getFieldTwo"
+        },
+        "fieldThree": {
+          "label": "Dynamic Select Model 3",
+          "required": true,
+          "viewClass": "SelectView",
+          "help": {
+            "description": "A"
+          },
+          "require": [
+            "fieldTwo"
+          ],
+          "model": "getFieldThree"
+        },
+        "textFieldReq": {
+          "label": "Text Field field",
+          "required": true,
+          "order": 99,
+          "viewClass": "TextFieldView"
+        },
+        "textField": {
+          "label": "Text Field field",
           "required": false,
-          "viewClass": "JSONataView",
-          "prompt": "Write a request line (content after $)"
+          "order": 98,
+          "viewClass": "TextFieldView"
+        },
+        "pwdFieldReq": {
+          "label": "Password field",
+          "required": true,
+          "order": 97,
+          "viewClass": "PasswordFieldView"
+        },
+        "pwdField": {
+          "label": "Password field",
+          "required": false,
+          "order": 96,
+          "viewClass": "PasswordFieldView"
+        },
+        "checkboxFieldReq": {
+          "label": "CheckBoxView field",
+          "required": true,
+          "order": 95,
+          "viewClass": "CheckBoxView"
+        },
+        "checkboxField": {
+          "label": "CheckBoxView field",
+          "required": false,
+          "order": 94,
+          "viewClass": "CheckBoxView"
+        },
+        "selectFieldReq": {
+          "label": "SelectView field",
+          "required": true,
+          "order": 93,
+          "viewClass": "SelectView",
+          "model": {
+            "foo": "foo",
+            "bar": "bar"
+          }
+        },
+        "selectField": {
+          "label": "SelectView field",
+          "required": false,
+          "order": 92,
+          "viewClass": "SelectView",
+          "model": {
+            "foo": "foo",
+            "bar": "bar"
+          }
+        },
+        "jsonataFieldReq": {
+          "label": "JSONata field",
+          "required": true,
+          "order": 91,
+          "viewClass": "JSONataView"
+        },
+        "jsonataField": {
+          "label": "JSONata field",
+          "required": false,
+          "order": 90,
+          "viewClass": "JSONataView"
+        },
+        "codeReq": {
+          "viewClass": "CodeFieldView",
+          "label": "Code",
+          "required": true,
+          "order": 89,
+          "default": "// Please note only Node.js code is supported here\nasync function run(msg, cfg, snapshot) {\n\tthis.logger.info('Incoming message is %s', JSON.stringify(msg));\n\tconst body = { result : 'Hello world!' };\n\t// You can emit as many data messages as required\n\tawait this.emit('data', { body });\n\tthis.logger.info('Execution finished');\n}"
+        },
+        "code": {
+          "viewClass": "CodeFieldView",
+          "label": "Code",
+          "required": false,
+          "order": 88,
+          "default": "// Please note only Node.js code is supported here\nasync function run(msg, cfg, snapshot) {\n\tthis.logger.info('Incoming message is %s', JSON.stringify(msg));\n\tconst body = { result : 'Hello world!' };\n\t// You can emit as many data messages as required\n\tawait this.emit('data', { body });\n\tthis.logger.info('Execution finished');\n}"
         }
       },
       "metadata": {
