@@ -1,6 +1,6 @@
 {
   "title": "Configuration component",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "elastic.io component to separate the modification of some configurable values from the modification of the flow",
   "credentials": {
     "fields": {
@@ -211,6 +211,11 @@
           "required": false,
           "order": 88,
           "default": "// Please note only Node.js code is supported here\nasync function run(msg, cfg, snapshot) {\n\tthis.logger.info('Incoming message is %s', JSON.stringify(msg));\n\tconst body = { result : 'Hello world!' };\n\t// You can emit as many data messages as required\n\tawait this.emit('data', { body });\n\tthis.logger.info('Execution finished');\n}"
+        },
+        "reader": {
+          "label": "REST API view",
+          "required": true,
+          "viewClass": "RESTAPIView"
         }
       },
       "metadata": {
