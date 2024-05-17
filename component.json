@@ -1,6 +1,6 @@
 {
   "title": "Configuration component",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "elastic.io component to separate the modification of some configurable values from the modification of the flow",
   "credentials": {
     "fields": {
@@ -77,7 +77,7 @@
         }
       },
       "jsonataFieldReq": {
-        "label": "JSONata field",
+        "label": "JSONata field QA",
         "required": true,
         "viewClass": "JSONataView",
         "help": {
@@ -85,7 +85,7 @@
         }
       },
       "jsonataField": {
-        "label": "JSONata field",
+        "label": "JSONata field QA",
         "required": false,
         "viewClass": "JSONataView",
         "help": {
