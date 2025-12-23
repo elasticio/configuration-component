@@ -6,7 +6,7 @@ const sinon = require('sinon');
 const logger = require('@elastic.io/component-logger')();
 
 const {expect} = chai;
-const {messages} = require('elasticio-node');
+const {messages} = require('../lib/utils');
 const emitConfig = require('../lib/actions/emitConfig');
 
 describe('emitConfig', () => {
